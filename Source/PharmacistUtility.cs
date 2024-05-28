@@ -41,8 +41,7 @@ namespace Pharmacist
             if (ticksToDeathDueToBloodLoss <= GenDate.TicksPerHour * 6 ||
                  hediffs.Any(h => h.CurStage?.lifeThreatening ?? false) ||
                  hediffs.Any(NearLethalDisease) ||
-                 hediffs.Any(h => IsBloodRot(h) && h.Severity > PharmacistSettings.medicalCare.DiseaseThreshold) ||
-                 hediffs.Any(h => IsLungRot(h) && h.Severity > PharmacistSettings.medicalCare.DiseaseThreshold)
+                 hediffs.Any(h => IsBloodRot(h) && h.Severity > PharmacistSettings.medicalCare.DiseaseThreshold)
                  )
             {
                 return InjurySeverity.LifeThreathening;
